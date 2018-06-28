@@ -1,0 +1,26 @@
+<!--
+  Generated template for the PersonDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>personDetail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div text-center>
+    <img [src]="datosPersona.photo">
+
+    <h1 style="color:blueviolet" class="border border-danger">Nombre</h1>
+    <h2>{{ datosPersona.name }}</h2>
+    <hr>
+    <h1 style="color:coral" class="border border-danger">Ocupacion</h1>
+    <h2>{{ datosPersona.position }}</h2>
+  </div>
+</ion-content>

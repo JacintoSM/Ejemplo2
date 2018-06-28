@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-icon name="logo-apple">Segunda App</ion-icon>
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="aboutApp()">
+        <ion-icon name="logo-android">Segunda App</ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showAlert()">
+        <ion-icon name="help-circule">Alert</ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--  <button ion-button block color="danger" (click)="mostrarDetallePersona()">
+    Ir a la Pagina 2
+  </button>-->
+
+  <!--<div class="fa-4x">
+    <span class="fa-layers fa-fw" style="background:MistyRose">
+      <i class="fas fa-certificate"></i>
+      <span class="fa-layers-text fa-inverse" data-fa-transform="shrink-11.5 rotate--30" style="font-weight:900">NEW</span>
+    </span>
+  </div>-->
+
+  <button ion-button style="background:red" [navPush]="paginaAjustes">
+    <ion-icon name="logo-android">pagina de Ajustes</ion-icon>
+    <ion-icon name="logo-android" isActive="false"></ion-icon>
+  </button>
+
+  <h1 class="text-danger">Person List</h1>
+  <ion-list>
+
+    <button ion-item *ngFor="let p of personList" (click)="mostrarDetallePersona(p)" class="shadow-lg p-3 mb-5 bg-white rounded">
+      {{ p.name }}
+      <ion-avatar item-left>
+        <img [src]="p.photo" class="fa-spin">
+      </ion-avatar>
+
+    </button>
+  </ion-list>
+  <br>
+  <h1>-----------------------------------</h1>
+  <br>
+  <ion-list>
+    <button ion-item *ngFor="let animal of animalList" (click)="mostrarDetalleAnimal(animal)" class="shadow-lg p-3 mb-5 bg-white rounded">
+      {{animal.name}}
+      <ion-avatar item-left>
+        <img [src]="animal.picture">
+      </ion-avatar>
+
+    </button>
+
+  </ion-list>
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Opciones</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showConfirm()">
+        <ion-icon name="arrow-round-forward">PULSAR AQUI </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
